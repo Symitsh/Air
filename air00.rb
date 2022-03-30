@@ -1,4 +1,4 @@
-#           ***** Split *****
+#       ***** Split *****
 # Ne pas utiliser la méthode .split
 
 # Fonctions utilisées :
@@ -11,7 +11,7 @@ end
 def cancel_separators(tableau, string_séparateur)                
     separator = ""
     tableau.each_line(string_séparateur, chomp: true) do |element|     # 3: Affiche chaque élément de mon tableau avec entre, un séparateur
-        (next) if tableau[element] == separator                        # 4: Si séparateurs supplémentaires, passe aux caractères suivants
+        (next) if tableau[element] == separator                        # 4: Si séparateurs supplémentaires, passe aux caractères suivants 
         puts tableau[element]
     end
 end
@@ -23,5 +23,5 @@ end
 string_à_couper = ARGV                                                  # 1: Transforme ma chaîne de caractère en tableau
 string_séparateur = ' '
 
-# Partie 3 et 4: Résolution, Affichage
+# Partie 3: Résolution
 solution = ma_fonction(string_à_couper, string_séparateur)
