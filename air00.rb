@@ -3,7 +3,7 @@
 
 # Fonctions utilisées :
 def ma_fonction(string_à_couper, string_séparateur) 
-    tableau = string_à_couper[0]                                        # 2: Puis zoom dans mon tableau pour avoir un string
+    tableau = string_à_couper[0]                                       # 2: Puis zoom dans mon tableau pour avoir un string
     cancel_separators(tableau, string_séparateur)
     return tableau
 end
@@ -20,7 +20,7 @@ end
 (puts "error"; exit) if ARGV.size != 1
 
 # Partie 2 : Parsing
-string_à_couper = ARGV                                                  # 1: Transforme ma chaîne de caractère en tableau
+string_à_couper = ARGV                                                 # 1: Transforme ma chaîne de caractère en tableau
 string_séparateur = ' '
 
 # Partie 3: Résolution
