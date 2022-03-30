@@ -1,6 +1,4 @@
-# ***** Split *****
-# Créez un programme qui découpe une chaîne de caractères en tableau
-# séparateurs : espaces, tabulations, retours à la ligne).
+#           ***** Split *****
 # Ne pas utiliser la méthode .split
 
 # Fonctions utilisées :
@@ -13,9 +11,7 @@ end
 def cancel_separators(tableau, string_séparateur)                
     separator = ""
     tableau.each_line(string_séparateur, chomp: true) do |element|     # 3: Affiche chaque élément de mon tableau avec entre, un séparateur
-        if tableau[element] == separator                               # 4: Si séparateurs supplémentaires, passe aux caractères suivants
-            next
-        end
+        (next) if tableau[element] == separator                        # 4: Si séparateurs supplémentaires, passe aux caractères suivants
         puts tableau[element]
     end
 end
