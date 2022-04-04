@@ -1,30 +1,28 @@
 # ***** Sur chacun d’entre eux *****
-# Créez un programme qui est capable de reconnaître et de faire une
-# opération (addition ou soustraction) sur chaque entier d’une liste.
-# Exemples d’utilisation :
-=begin
-$> ruby exo.rb 1 2 3 4 5 “+2”
-3 4 5 6 7
-$> ruby exo.rb 10 11 12 20 “-5”
-5 6 7 15
-L’opération à appliquer sera toujours le dernier élément.
-*****************************************************************
-Crer une boucle qui parcour chaque élément et prend le dernier élément et/ou la string 
-pour faire une addition ou soustraction
-=end
-
 # Fonctions utilisées :
-
-
-
+def ma_fonction(array_de_strings, string_opération)
+    array = []
+    array << array_de_strings[-1] ; array_de_strings.pop
+    array_de_strings.map do |element|
+        solu = element.to_i + string_opération
+        puts solu
+    end
+end
 
 # Partie 1: Gestion d'erreur
-# (puts "error"; exit) if ARGV.size != 1
+(puts "error"; exit) if ARGV.size <= 1
 
 # Partie 2 : Parsing
+array_de_strings = ARGV                                                 # 1: Transforme ma chaîne de caractère en tableau
+string_opération = ARGV[-1].to_i
 
 # Partie 3: Résolution
-solution = ma_fonction()
+solution = ma_fonction(array_de_strings, string_opération)
 
-# Partie 4 : Affichage
-p solution
+=begin
+    
+    array_de_strings.each do |element|
+        print element.to_i + string_opération
+    end
+    
+=end
