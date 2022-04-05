@@ -1,13 +1,5 @@
 # ***** Mélanger deux tableaux triés *****
 # Fonction utilisée :
-def split_array(array)
-    array = ARGV
-    array1, array2 = [], []
-    fusion = array.index('fusion')
-    array.each.with_index {|element, index| (index < fusion) ? (array1 << element) : (array2 << element)} 
-    array2.shift
-end
-
 def sorted_fusion(array1, array2)
     new_array = array1 + array2
     1.upto(new_array.length-1) do |i|
@@ -26,10 +18,15 @@ end
 (puts "error"; exit) if ARGV.size <= 2
 
 # Partie 2 : Parsing
-split_array(array)
+p array = ARGV
+array1, array2 = [], []
+fusion = array.index("fusion")
+array2 = array.delete_if.with_index {|element, index| index >= 0 && index <= fusion}
+array1 = array.delete_if.with_index {|element, index| index >= fusion && index <= fusion*2}
+# array.each.with_index {|element, index| (index < fusion) ? (array1 << element) : (array2 << element)} 
 
 # Partie 3: Résolution
-#solution = sorted_fusion(array1, array2)
+solution = sorted_fusion(array1, array2)
 
 # Partie 4: Solution
-#puts solution
+# puts solution
