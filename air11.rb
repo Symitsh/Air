@@ -1,9 +1,9 @@
 # ***** Afficher une pyramide *****
 # Fonction utilisée :
 def pyramid(symbol, height)
-    height.times {|element|
-        print ' ' * (height - element) 
-        puts symbol * (2 * element + 1)}
+  height.times {|element|
+    print ' ' * (height - element) 
+    puts symbol * (2 * element + 1)}
 end
 
 # Partie 1: Gestion d'erreur
