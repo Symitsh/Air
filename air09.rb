@@ -1,9 +1,16 @@
 # ***** Rotation vers la gauche *****
 # Fonction utilisée :
 def ma_rotation(array)
-    p array
-
-    # return new_array
+    steps = 1
+    new_array = array
+    for i in 0...steps
+        first = array[0]
+        for j in 1..array.length
+            array[j-1] = array[j]
+        end
+        array[-1] = first
+    end
+    return new_array
 end
 
 # Partie 1: Gestion d'erreur
