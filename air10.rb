@@ -5,7 +5,7 @@ def display_file(file)
 end
 
 # Partie 1: Gestion d'erreur
-(puts "error"; exit) if ARGV.size > 1
+(puts "error"; exit) if ARGV.size == 0
 (puts "error"; exit) if !File.exist?('a.txt')
 
 # Partie 2 : Parsing
