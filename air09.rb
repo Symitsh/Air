@@ -1,15 +1,9 @@
 # ***** Rotation vers la gauche *****
+# Sans utilisé .rotate || .shift etc...
 # Fonction utilisée :
 def ma_rotation(array)
-    steps = 1
-    new_array = array
-    for i in 0...steps
-        first = array[0]
-        for j in 1..array.length
-            array[j-1] = array[j]
-        end
-        array[-1] = first
-    end
+    new_array = []
+    array.each.with_index {|element, i| new_array.insert(i - 1, element) }
     return new_array
 end
 
