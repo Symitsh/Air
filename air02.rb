@@ -1,12 +1,12 @@
 #   ***** Concat *****
 # Ne pas utiliser .concat
 # Fonction utilisée :
-def ma_fonction(array_de_strings, separateur)
+def ma_méthode(array_de_strings, separateur)
     string = ""                                     
     array_de_strings.each do |element|              # Enlève chaque élement du tableau et push dans la string
         string << (element + separateur)            # Avec entre chaque, le dernier élément du tableau
     end
-    return string
+    return string.capitalize!
 end
 
 # Partie 1: Gestion d'erreur
@@ -17,7 +17,7 @@ array_de_strings = ARGV
 separateur = ARGV.pop
 
 # Partie 3: Résolution
-solution = ma_fonction(array_de_strings, separateur)
+solution = ma_méthode(array_de_strings, separateur)
 
 # Partie 4: Affichage
 puts solution
