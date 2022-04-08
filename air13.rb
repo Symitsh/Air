@@ -2,12 +2,11 @@
 # Fonctions utilisées:
 def green(text)  "\e[32m#{text}\e[0m"  end
 def red(text)    "\e[31m#{text}\e[0m"  end
-def meta
+def evaluate
     def air00
         output00 = `ruby air00.rb "Bonjour les gars"`
-        output00.each_line do |element, i = 0| 
+        output00.each_line do |element| 
             if element == "Bonjour\n" || element == "les\n" || element == "gars\n"
-                i += 1
                 puts "air00 (#{$a += 1}/3) : #{$success}" ; $result += 1
             else
                 puts "air00 (#{$a += 1}/3) : #{$failure}"
@@ -215,13 +214,17 @@ def meta
     ("air00".."air12").each { |element| puts eval(element) } ; puts "Total success: (#{$result}/25)"
 end
 
-# Partie 1: Gestion d'erreur
 # Boucle qui vérifie si le fichier existe et si il est executable. Renvoie 'error' et quitte le programme dans le cas contrainre
-for i in '00'..'14'
-    (puts "error, air#{i}.rb exist?") if !File.exist?("air#{i}.rb")
-    (puts "error, file#{i} is executable?") if !File.executable?("air#{i}.rb") 
+def error_if
+    for i in '00'..'14'
+        (puts "error, air#{i}.rb exist?") if !File.exist?("air#{i}.rb")
+        (puts "error, file#{i} is executable?") if !File.executable?("air#{i}.rb") 
+    end
+    (puts "error argument"; exit) if ARGV.size != 0
 end
-(puts "error"; exit) if ARGV.size != 0
+
+# Partie 1: Gestion d'erreur
+error_if()
 
 # Partie 2: Parsing
 $success = green("success")
@@ -230,7 +233,7 @@ $a = 0
 $result = 0
 
 # Partie 3: Résolution
-solution = meta
+solution = evaluate
 
 # Partie 4: Affichage
 puts solution
